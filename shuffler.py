@@ -12,23 +12,25 @@ args = parser.parse_args()
 
 group_size = args.groupsize
 initial_collection = list(range(1,args.members))
-print(initial_collection)
 shuffled_teams = []
 index = 0
-# output_type = len(initial_collection) % group_size
-# Rest+1 gibt die Anzahl der gesplitteten Gruppen an.
+
+#checks how many people do not fit in
+member_overflow  = len(initial_collection) % group_size
+
+# checks how many full groups are possible
+full_groups = len(initial_collection) // group_size
 
 shuffle(initial_collection)
-print(initial_collection)
 
 while(index < len(initial_collection)):
     temp_list = []
-    print("index: " + str(index))
     for i in range(0, group_size):
         temp_list.append(initial_collection[index])
         index += 1
     print(temp_list)
-    shuffled_teams.append(temp_list)
+    # add all groups to a list if needed
+    #shuffled_teams.append(temp_list)
 
-
-print(shuffled_teams)
+# show full list of groups if needed
+#print(shuffled_teams)
