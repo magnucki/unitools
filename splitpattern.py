@@ -8,7 +8,7 @@ parser.add_argument("groupsize", help="How many people should be in one group", 
 args = parser.parse_args()
 
 group_size = args.groupsize
-member_list = list(range(1, args.members))
+member_list = list(range(0, args.members))
 member_overflow =  len(member_list) % group_size
 full_groups = len(member_list) // group_size
 
@@ -30,6 +30,7 @@ elif(member_overflow == group_size-1 ):
     print("One group with {} Members and {} with {}.".format(member_overflow, full_groups, group_size))
 else:
     if ((group_size+member_overflow) % 2 == 0):
-        print("2 equal groups")
+        print("Two groups with {} Members and {} with {}".format((group_size + member_overflow) // 2, full_groups -1, group_size))
     else:
-        print("split it!")
+        print("One group with {} members, one with {} and {} with {}.".format((group_size + member_overflow) // 2 ,
+                                                                              (group_size + member_overflow) // 2 +1,full_groups-1,group_size))
