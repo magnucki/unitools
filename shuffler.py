@@ -1,4 +1,4 @@
-__author__ = 'Rico'
+__author__ = 'Rico Magnucki'
 
 from random import shuffle
 import argparse
