@@ -1,4 +1,4 @@
-__author__ = 'Rico'
+__author__ = 'Rico Magnucki'
 
 import argparse
 
@@ -12,20 +12,10 @@ member_list = list(range(0, args.members))
 member_overflow =  len(member_list) % group_size
 full_groups = len(member_list) // group_size
 
-def extend():
-    return
-
-def split():
-    return [[],[]]
-
-def stay():
-    return []
-
 if (member_overflow == 0):
     print("nothing to do here!")
 elif (member_overflow == 1):
     print("One group with {} Members and {} with {}.".format(group_size+1, full_groups-1, group_size))
-    extend()
 elif(member_overflow == group_size-1 ):
     print("One group with {} Members and {} with {}.".format(member_overflow, full_groups, group_size))
 else:
@@ -34,3 +24,13 @@ else:
     else:
         print("One group with {} members, one with {} and {} with {}.".format((group_size + member_overflow) // 2 ,
                                                                               (group_size + member_overflow) // 2 +1,full_groups-1,group_size))
+
+# TODO Implement this for further usage
+#def extend():
+#    return
+#
+#def split():
+#    return [[], []]
+#
+#def stay():
+#    return []
